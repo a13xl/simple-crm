@@ -43,3 +43,7 @@ Thumbs.db
 
 .htaccess
 up.sh
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

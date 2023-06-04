@@ -1,3 +1,15 @@
+.dialog-container {
+    position: relative;
+
+    mat-progress-bar {
+        width: calc(100% + 24px);
+        position: absolute;
+        top: 0;
+        left: -24px;
+        right: -24px;
+    }
+}
+
 mat-form-field {
     padding-top: 10px;
 }
