@@ -9,7 +9,6 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-add-user.component.scss']
 })
 export class DialogAddUserComponent {
-
   user = new User();
   birthDate!: Date;
   loading: boolean = false;
