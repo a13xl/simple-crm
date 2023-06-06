@@ -6,16 +6,11 @@
                 <th>eMail</th>
                 <th>City</th>
             </tr>
-            <tr>
-                <td>Name1</td>
-                <td>eMail1</td>
-                <td>City1</td>
-            </tr>
 
-            <tr>
-                <td>Name2</td>
-                <td>eMail2</td>
-                <td>City2</td>
+            <tr *ngFor = "let data of userData" [routerLink]="['/user/' + data.id]">
+                <td>{{ data.firstName }} {{ data.lastName }}</td>
+                <td>{{ data.eMail }}</td>
+                <td>{{ data.city }}</td>
             </tr>
         </table>
     </mat-card-content>

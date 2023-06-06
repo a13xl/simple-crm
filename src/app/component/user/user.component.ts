@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { User } from 'src/models/user.class';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,13 +14,20 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 export class UserComponent {
   user = new User();
   docRef: any;
+  userData: Array<any> | undefined;
 
-  constructor(public dialog: MatDialog, private firestore: Firestore) {}
+  constructor(public dialog: MatDialog, private firestore: Firestore) {
+    this.getData();
+  }
 
-  ngOnInit(): void {
-    /* collectionData(collection(this.firestore, 'users'), ((changes: any) => {
-      console.log('Received changes from DB', changes);
-    })); */
+  getData() {
+    const collectionInstance = collection(this.firestore, 'users');
+
+    collectionData(collectionInstance, {idField: 'id'})
+      .subscribe(changes => {
+        console.log('Received changes from DB', changes);
+        this.userData = changes;
+    })
   }
 
   openDialog() {
