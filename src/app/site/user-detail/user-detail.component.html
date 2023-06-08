@@ -11,6 +11,8 @@
     <div class="user-details">
         <h2>{{ user.firstName }} {{ user.lastName }}</h2>
         <a href="mailto:{{ user.eMail }}">{{ user.eMail }}</a>
+        <!-- <a href="tel:{{ user.phone }}">{{ user.phone }}</a>
+        <a href="tel:{{ user.cellphone }}">{{ user.cellphone }}</a> -->
     </div>
 </mat-card>
 
@@ -31,5 +33,43 @@
     <mat-card-content>
         {{ user.street }} <br>
         {{ user.zipCode }} {{ user.city }}
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="birthdayMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #birthdayMenu="matMenu">
+        <button mat-menu-item (click)="editBirthdayDetail()">Edit</button>
+    </mat-menu>
+
+    <mat-card-header class="user-details-content-header">
+        <mat-card-title>
+            Birthday
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <span>{{ user.birthDate }} (XX days)</span>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="noteMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #noteMenu="matMenu">
+        <button mat-menu-item (click)="editNoteDetail()">Edit</button>
+    </mat-menu>
+
+    <mat-card-header class="user-details-content-header">
+        <mat-card-title>
+            Note
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <!-- {{ user.note }} -->
     </mat-card-content>
 </mat-card>

@@ -4,7 +4,7 @@ $link-color: #03DAC6; //#BB86FC;
 $pic-height: 100px;
 
 .user-detail-header {
-    min-height: 250px;
+    min-height: 170px;
     padding: 20px;
     background-color: $primary-color;
     color: white;
@@ -12,7 +12,7 @@ $pic-height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
 
     img {
         height: $pic-height;
@@ -28,6 +28,16 @@ $pic-height: 100px;
         &:hover {
             color: #77fcee;
         }
+    }
+}
+
+.user-details-birthday {
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-end;
+
+    mat-icon {
+        margin-right: 3px;
     }
 }
 

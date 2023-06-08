@@ -21,12 +21,12 @@ export class DialogAddUserComponent {
 
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
-    console.log('current user is', this.user);
+    //console.log('current user is', this.user);
     this.loading = true;
     
     const collectionInstance = collection(this.firestore, 'users');
     addDoc(collectionInstance, this.user.toJSON()).then((result: any) => {
-      console.log('Adding user finished', result);
+      //console.log('Adding user finished', result);
       this.loading = false;
       this.closeAddUser();
     })
