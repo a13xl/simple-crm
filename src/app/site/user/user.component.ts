@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
+import { DialogAddUserComponent } from '../../component/dialog-add-user/dialog-add-user.component';
 import { User } from 'src/models/user.class';
-import { Firestore, collection, collectionData, doc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 
 
 @Component({
@@ -27,7 +26,7 @@ export class UserComponent {
       .subscribe(changes => {
         console.log('Received changes from DB', changes);
         this.userData = changes;
-    })
+    });
   }
 
   openDialog() {

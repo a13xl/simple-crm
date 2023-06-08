@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 .htaccess
-up.sh
+
 # Firebase
 .firebase
 *-debug.log

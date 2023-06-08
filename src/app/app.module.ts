@@ -8,8 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { UserComponent } from './component/user/user.component';
+import { DashboardComponent } from './site/dashboard/dashboard.component';
+import { UserComponent } from './site/user/user.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DialogAddUserComponent } from './component/dialog-add-user/dialog-add-user.component';
@@ -23,6 +23,10 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './site/user-detail/user-detail.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { DialogEditAddressComponent } from './component/dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './component/dialog-edit-user/dialog-edit-user.component';
 
 
 
@@ -31,7 +35,10 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,7 @@ import {MatCardModule} from '@angular/material/card';
     provideFirestore(() => getFirestore()),
     MatProgressBarModule,
     MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
