@@ -20,7 +20,6 @@ export class DialogEditAddressComponent {
   }
 
   async saveAddress() {
-    //console.log('current user is', this.user);
     this.loading = true;
     
     const docRef = doc(this.firestore, 'users', `${this.userId}`);
