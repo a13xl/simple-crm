@@ -29,7 +29,6 @@ import { DialogEditAddressComponent } from './component/dialog-edit-address/dial
 import { DialogEditUserComponent } from './component/dialog-edit-user/dialog-edit-user.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +58,7 @@ import { DialogEditUserComponent } from './component/dialog-edit-user/dialog-edi
     provideFirestore(() => getFirestore()),
     MatProgressBarModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
